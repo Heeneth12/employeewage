@@ -1,19 +1,17 @@
-
 ispresent=1
-payperhover=20
+payperhour=20
 day=8
 
+checkAtt=$((RANDOM%2))
 
-checkAtt=$((RANDOME%2))
-
-
-if [ $ispresent == $checkAtt ]
-then
-echo "Employ is present"
+if [ $ispresent -eq $checkAtt ]; then
+    echo "Employee is present"
+    # Assuming part-time hours is 8 for calculation
+    partTimeHours=8
+    pay=$(($payperhour * $partTimeHours * $day))
+    echo "Total Wage: $pay"
 else
-echo "employe is absent"
+    echo "Employee is absent"
 fi
 
-pay=$(($payperhover * $day))
-echo $pay
 
